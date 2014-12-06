@@ -26,7 +26,7 @@ fun test(b1: B, b2: B) {
 fun todoTask11() = TODO(
     """
         Task 11.
-        Uncomment the commented line and make it compile. 
+        Uncomment the commented line and make it compile.
         Add all changes to the file MyDate.kt.
         Make class MyDate implement Comparable.
         For syntax details see syntax/classesObjectsTraits.kt.
@@ -35,7 +35,6 @@ fun todoTask11() = TODO(
 )
 
 fun task11(date1: MyDate, date2: MyDate): Boolean {
-    todoTask11()
-//    return date1 < date2
+    return date1 < date2
 }
 
