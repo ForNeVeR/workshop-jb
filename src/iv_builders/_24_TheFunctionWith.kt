@@ -15,11 +15,15 @@ fun todoTask24() = TODO(
     """
 )
 
-fun task24(): Boolean = todoTask24()
+fun task24(): Boolean = true
+
+fun <T> with2(instance: T, action: T.() -> Unit) {
+    instance.action()
+}
 
 fun buildString(): String {
     val stringBuilder = StringBuilder()
-    with (stringBuilder) {
+    with2 (stringBuilder) {
         append("Numbers: ")
         for (i in 1..10) {
             append(i)
@@ -30,7 +34,7 @@ fun buildString(): String {
 
 fun buildMap(): Map<Int, String> {
     val map = HashMap<Int, String>()
-    with (map) {
+    with2 (map) {
         put(0, "0")
         for (i in 1..10) {
             put(i, "$i")

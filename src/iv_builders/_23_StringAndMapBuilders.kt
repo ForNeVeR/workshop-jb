@@ -2,6 +2,8 @@ package iv_builders
 
 import util.TODO
 import java.util.HashSet
+import com.google.common.collect.Maps
+import java.util.HashMap
 
 fun buildString(build: StringBuilder.() -> Unit): String {
     val stringBuilder = StringBuilder()
@@ -30,12 +32,17 @@ fun todoTask23() = TODO(
     references = { syntax.javaCollections.useMutableSet(HashSet())}
 )
 
+fun <K, V> buildMap(builder: HashMap<K, V>.() -> Unit): Map<K, V> {
+    val map = Maps.newHashMap<K, V>()
+    map.builder()
+    return map
+}
+
 fun task23(): Map<Int, String> {
-    todoTask23()
-//    return buildMap {
-//        put(0, "0")
-//        for (i in 1..10) {
-//            put(i, "$i")
-//        }
-//    }
+    return buildMap {
+        put(0, "0")
+        for (i in 1..10) {
+            put(i, "$i")
+        }
+    }
 }
